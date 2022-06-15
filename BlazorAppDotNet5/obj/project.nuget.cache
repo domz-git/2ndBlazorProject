@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "vCAkpv66EdiOrJNWmEC/UJ64XtKXtVHPPxwDrYk6MWPGU85tVXgTedyMMG6kfZ1LcknEsoSr0bq3DTDqbetOfQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dominik\\source\\repos\\BlazorAppDotNet5\\BlazorAppDotNet5\\BlazorAppDotNet5.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dominik\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.14\\microsoft.netcore.app.host.win-x64.5.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}
