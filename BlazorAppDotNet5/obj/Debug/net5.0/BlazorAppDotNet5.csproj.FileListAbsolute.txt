@@ -56,3 +56,5 @@ C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\obj\Debug\net5.0
 C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\obj\Debug\net5.0\BlazorAppDotNet5.pdb
 C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\obj\Debug\net5.0\BlazorAppDotNet5.genruntimeconfig.cache
 C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\obj\Debug\net5.0\BlazorAppDotNet5.csproj.CopyComplete
+C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\obj\Debug\net5.0\RazorDeclaration\Pages\Todo.razor.g.cs
+C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\obj\Debug\net5.0\Razor\Pages\Todo.razor.g.cs

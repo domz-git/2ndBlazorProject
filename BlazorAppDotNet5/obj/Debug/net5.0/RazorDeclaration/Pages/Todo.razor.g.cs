@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace BlazorAppDotNet5.Shared
+namespace BlazorAppDotNet5.Pages
 {
     #line hidden
     using System;
@@ -82,7 +82,15 @@ using BlazorAppDotNet5.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 1 "C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\Pages\Todo.razor"
+using TodoList;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/todo")]
+    public partial class Todo : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -90,16 +98,21 @@ using BlazorAppDotNet5.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\Shared\NavMenu.razor"
+#line 33 "C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\Pages\Todo.razor"
        
-    private bool collapseNavMenu = true;
+    private string? newTodo;
+    private DateTime? newDueDate=null;
+    private List<TodoItem> todos = new();
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
+    private void addTodo()
     {
-        collapseNavMenu = !collapseNavMenu;
+        if (!string.IsNullOrWhiteSpace(newTodo))
+        {
+            todos.Add(new TodoItem { title = newTodo , dueDate=newDueDate});
+            newTodo = string.Empty;
+        }
     }
+
 
 #line default
 #line hidden

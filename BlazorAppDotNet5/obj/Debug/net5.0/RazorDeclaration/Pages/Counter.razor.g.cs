@@ -83,6 +83,7 @@ using BlazorAppDotNet5.Shared;
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/counter")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/counter/{startingValue:int}")]
     public partial class Counter : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -91,12 +92,21 @@ using BlazorAppDotNet5.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 9 "C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\Pages\Counter.razor"
+#line 10 "C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\Pages\Counter.razor"
        
     private int currentCount = 0;
 
     [Parameter]
+    public int startingValue { get; set; }=0;
+
+    [Parameter]
     public int increment { get; set; } = 1;
+
+    protected override void OnParametersSet()
+    {
+        currentCount = startingValue;
+        base.OnParametersSet();
+    }
 
     private void IncrementCount()
     {
