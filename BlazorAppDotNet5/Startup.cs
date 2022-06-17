@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BlazorAppDotNet5.Components;
 
 namespace BlazorAppDotNet5
 {
@@ -28,6 +29,7 @@ namespace BlazorAppDotNet5
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddHttpClient();
             services.AddSingleton<WeatherForecastService>();
         }
 
@@ -52,6 +54,7 @@ namespace BlazorAppDotNet5
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapDefaultControllerRoute();
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });

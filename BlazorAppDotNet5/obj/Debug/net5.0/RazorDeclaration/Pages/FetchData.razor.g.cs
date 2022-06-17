@@ -83,8 +83,36 @@ using BlazorAppDotNet5.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\Pages\FetchData.razor"
+#line 4 "C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\Pages\FetchData.razor"
 using BlazorAppDotNet5.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\Pages\FetchData.razor"
+using Microsoft.AspNetCore.Mvc;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\Pages\FetchData.razor"
+using Microsoft.AspNetCore.Http;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 8 "C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\Pages\FetchData.razor"
+using Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\Pages\FetchData.razor"
+using System.Net.Http.Json;
 
 #line default
 #line hidden
@@ -98,19 +126,22 @@ using BlazorAppDotNet5.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\Pages\FetchData.razor"
-       
-    private WeatherForecast[] forecasts;
+#line 45 "C:\Users\Dominik\source\repos\BlazorAppDotNet5\BlazorAppDotNet5\Pages\FetchData.razor"
+           
+        private IEnumerable<WeatherForecast> forecasts;
 
-    protected override async Task OnInitializedAsync()
-    {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
-    }
+        protected override async Task OnInitializedAsync()
+        {
+            //forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+            forecasts = await Http.GetFromJsonAsync<IEnumerable<WeatherForecast>>("https://localhost:5001/api/forecast");
+        }
+    
 
 #line default
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private WeatherForecastService ForecastService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
 #pragma warning restore 1591
